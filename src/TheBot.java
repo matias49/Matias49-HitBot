@@ -12,8 +12,10 @@ import org.jibble.pircbot.PircBot;
  * 2 - add command method // DONE
  * 2.5 - DOCUMENTATION // DONE
  * 3 - Some Tests // DONE
- * 4 - Github pre-alpha
- * 5 - /r/hitbox
+ * 4 - Github pre-alpha // DONE
+ * 5 - /r/hitbox // DONE
+ * 5.5 - Switch to websockets (Thanks /user/Ertzel) // Partially done
+ * 5.6 - Work on substring commands
  * 6 - Working on !help command
  * 7 - Handling !add and !remove commands exceptions
  * 8 - Rename some variables/methods
