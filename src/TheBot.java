@@ -13,8 +13,8 @@ import org.java_websocket.drafts.Draft_10;
  * 5 - /r/hitbox // DONE
  * 5.5 - Switch to websockets (Thanks /user/Ertzel) // DONE
  * 5.6 - Work on substring commands // DONE
- * 5.7 - DOCUMENTATION
- * 5.8 - New version on Github
+ * 5.7 - DOCUMENTATION // DONE
+ * 5.8 - New version on Github // DONE 
  * 5.9 - Working on avoid command loop if "BOT -" is removed on HitboxWebsocket.sendMessage
  * 6 - Working on !help command
  * 7 - Handling !add and !remove commands exceptions
