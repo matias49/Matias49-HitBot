@@ -64,7 +64,7 @@ public class Commands implements Serializable {
 		try {
 			FileInputStream readFile = new FileInputStream(channel+".ser");
 				ObjectInputStream ois = new ObjectInputStream(readFile);
-				commands = (HashMap) ois.readObject();
+				this.commands = (HashMap) ois.readObject();
 				ois.close();
 				readFile.close();
 		} 
