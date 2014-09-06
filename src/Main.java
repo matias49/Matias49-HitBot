@@ -15,8 +15,8 @@ public class Main {
 	public static void main(String[] args) {
 		// Presentation
 		System.out.println("---------- Matias49 IRC BOT for Hitbox. ----------");
-		System.out.println("---------- Source code of the bot :  ----------");
-		System.out.println("---------- Reddit post on /r/hitbox ----------");
+		System.out.println("---------- Source code of the bot :  https://github.com/matias49/Matias49-HitBot ----------");
+		System.out.println("---------- Reddit post on /r/hitbox : http://www.reddit.com/r/hitbox/comments/2er2ql/im_developing_a_bot_here_is_it_source_code_and_my/ ----------");
 		System.out.println("---------- Thanks for using my pre-alpha version of my bot. ----------");
 		System.out.println("---------- Feel free to post any comments of the application on the Github page or on the Reddit topic. ----------");
 		System.out.println("---------- Thanks a lot for helping me improve the bot. Matias49 ----------");
