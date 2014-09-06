@@ -268,7 +268,8 @@ public class HitboxWebsocket extends WebSocketClient {
 	public void sendMessage(String channel, String message){
 		System.out.println("Sending message : " + message);
 		this.send("5:::{\"name\":\"message\",\"args\":[{\"method\":\"chatMsg\",\"params\":{\"channel\":\""+channel+"\",\"name\":\"Matias49\",\"nameColor\":\"FA5858\",\"text\":\"BOT - "+message+"\"}}]}");
-		
+		// Store the message sent in order to avoid loops
+		TheBot.lastMessage = message;
 	}
 
 }

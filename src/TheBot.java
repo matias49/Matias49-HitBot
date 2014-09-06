@@ -15,7 +15,7 @@ import org.java_websocket.drafts.Draft_10;
  * 5.6 - Work on substring commands // DONE
  * 5.7 - DOCUMENTATION // DONE
  * 5.8 - New version on Github // DONE 
- * 5.9 - Working on avoid command loop if "BOT -" is removed on HitboxWebsocket.sendMessage
+ * 5.9 - Working on avoid command loop if "BOT -" is removed on HitboxWebsocket.sendMessage // DONE
  * 6 - Working on !help command
  * 7 - Handling !add and !remove commands exceptions
  * 8 - Rename some variables/methods // REMOVED - did with 5.5
@@ -27,9 +27,7 @@ import org.java_websocket.drafts.Draft_10;
 
 /**
  * Main class of the program and the bot Constructor called by Main class is
- * defined here. All the behavior of the bot (commands, messages) is here For
- * more information about pircBot commands see :
- * http://www.jibble.org/pircbot.php
+ * defined here. All the behavior of the bot (commands, messages) is here
  * 
  * @author Matias49
  *
@@ -41,6 +39,8 @@ public class TheBot {
 	private Commands commands = new Commands();
 	private StringWebSocket stringActions = new StringWebSocket();
 	private HitboxWebsocket client;
+	
+	public static String lastMessage;
 
 	/**
 	 * Class constructor Create an instance of TheBot and tries to connect on
@@ -105,11 +105,20 @@ public class TheBot {
 
 	}
 
+	/**
+	 * Method called on each message the bot receives
+	 * @param newMessage - the line the bot received
+	 */
 	public void newMessage(String newMessage) {
+		// If the bot isn't joining the channel
 		if (!HitboxWebsocket.joiningChannel) {
+			
+			// If the line received is a message
 			if (stringActions.isMessage(newMessage)) {
 				String theMessage = stringActions.getMessage(newMessage);
-				if (theMessage.startsWith("!")) {
+				
+				// If the message is a command and if the command isn't what the bot sent last time
+				if (theMessage.startsWith("!") && !theMessage.equals(lastMessage)) {
 					this.execCommand(theMessage,
 							stringActions.isOwner(newMessage), stringActions.getUserName(newMessage));
 				}
@@ -117,6 +126,12 @@ public class TheBot {
 		}
 	}
 
+	/**
+	 * Executes all the behavior of the bot when a command is called
+	 * @param theMessage - The message of the user
+	 * @param isOwner - If the message is sent by the owner
+	 * @param userName - The username who sent the message
+	 */
 	private void execCommand(String theMessage, boolean isOwner, String userName) {
 		String command;
 
